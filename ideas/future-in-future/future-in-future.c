@@ -1,38 +1,53 @@
-#include "libminiasync.h"
+//
+// Created by blazej-smorawski on 13.07.2022.
+//
+#include <libminiasync.h>
+#include <time.h>
+#include <timer.h>
+#include <pthread.h>
 
 /*
  * ----==================----
- * Here's definition of callee_future
+ * Here's definition of timer_future
  */
-struct callee_future_data {
-    int number;
+struct timer_future_data {
+    double time;
+    struct timespec start_time;
 };
 
-struct callee_future_output {
-    int number;
+struct timer_future_output {
+    int unused;
 };
 
-FUTURE(callee_future, callee_future_data, callee_future_output);
+FUTURE(timer_future, struct timer_future_data, struct timer_future_output);
 
 static enum future_state
-callee_future_implementation(struct future_context *ctx, struct future_notifier *notifier)
+timer_future_implementation(struct future_context *ctx, struct future_notifier *notifier)
 {
-	struct callee_future_data *data = future_context_get_data(ctx);
-	struct callee_future_output *output = future_context_get_output(ctx);
+	struct timer_future_data *data = future_context_get_data(ctx);
+	struct timespec now_time;
 
-	int ret = printf("CALLEE SHOUTIEE\n");
-
-	return FUTURE_STATE_COMPLETE;
+	clock_gettime(CLOCK_REALTIME, &now_time);
+	if (timediff(&now_time,&data->start_time) >= data->time) {
+		printf("Timer done\n");
+		return FUTURE_STATE_COMPLETE;
+	} else {
+		printf("Timer running...\n");
+		return FUTURE_STATE_RUNNING;
+	}
 }
 
-/* It defines how to create 'async_print_fut' future */
-static struct callee_future
-callee(int number)
+/* Get timer_future */
+static struct timer_future
+timer(int time)
 {
-	struct callee_future future = {.output.number = 0};
-	future.data.number = number;
+	struct timer_future future = {
+		.output.unused = 0,
+		.data.time = time,
+		};
+	clock_gettime(CLOCK_REALTIME, &future.data.start_time);
 
-	FUTURE_INIT(&future, callee_future_implementation);
+	FUTURE_INIT(&future, timer_future_implementation);
 
 	return future;
 }
@@ -49,15 +64,70 @@ struct caller_future_data {
 };
 
 struct caller_future_output {
-    int number;
+    int unused;
 };
 
-FUTURE(caller_future, caller_future_data, caller_future_output);
+FUTURE(caller_future, struct caller_future_data, struct caller_future_output);
+
+static enum future_state
+caller_future_implementation(struct future_context *ctx, struct future_notifier *notifier)
+{
+	struct caller_future_data *data = future_context_get_data(ctx);
+	struct caller_future_output *output = future_context_get_output(ctx);
+
+	static struct timer_future static_timer;
+
+	/*
+	 * Static future should be 0'ed, so if the first 64 bits are 0 we
+	 * can guess it wasn't initialized yet
+	 */
+	if(*((long long *)(&static_timer)) == 0) {
+		static_timer = timer(5);
+		return FUTURE_STATE_RUNNING;
+	} else {
+		if (future_poll(&static_timer, NULL) == FUTURE_STATE_COMPLETE) {
+			printf("[%d] Done\n", data->number);
+			return FUTURE_STATE_COMPLETE;
+		} else {
+			printf("[%d] Running...\n", data->number);
+			return FUTURE_STATE_RUNNING;
+		}
+	}
+}
+
+/* Get caller_future */
+static struct caller_future
+caller(int number)
+{
+	struct caller_future future = {
+		.output.unused = 0,
+		.data.number = number,
+	};
+
+	FUTURE_INIT(&future, caller_future_implementation);
+
+	return future;
+}
 /*
  * ----==================----
  */
 
 int main(void) {
-	printf("Go\n");
+	struct runtime *r = runtime_new();
+	struct caller_future callers[] = {
+		caller(1),
+		caller(2),
+		caller(3),
+		caller(4)
+	};
+
+	struct future* runnables[] = {
+		FUTURE_AS_RUNNABLE(&callers[0]),
+		FUTURE_AS_RUNNABLE(&callers[1]),
+		FUTURE_AS_RUNNABLE(&callers[2]),
+		FUTURE_AS_RUNNABLE(&callers[3]),
+	};
+
+	runtime_wait_multiple(r, runnables,4);
 	return 0;
 }

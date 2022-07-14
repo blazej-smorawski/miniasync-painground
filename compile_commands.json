@@ -1,0 +1,158 @@
+[
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_os_thread_posix.c.o -MF subprojects/miniasync/libcores.a.p/src_core_os_thread_posix.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_os_thread_posix.c.o -c ../subprojects/miniasync/src/core/os_thread_posix.c",
+    "file": "../subprojects/miniasync/src/core/os_thread_posix.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_os_thread_posix.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_os_posix.c.o -MF subprojects/miniasync/libcores.a.p/src_core_os_posix.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_os_posix.c.o -c ../subprojects/miniasync/src/core/os_posix.c",
+    "file": "../subprojects/miniasync/src/core/os_posix.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_os_posix.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_util_posix.c.o -MF subprojects/miniasync/libcores.a.p/src_core_util_posix.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_util_posix.c.o -c ../subprojects/miniasync/src/core/util_posix.c",
+    "file": "../subprojects/miniasync/src/core/util_posix.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_util_posix.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_cpu.c.o -MF subprojects/miniasync/libcores.a.p/src_core_cpu.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_cpu.c.o -c ../subprojects/miniasync/src/core/cpu.c",
+    "file": "../subprojects/miniasync/src/core/cpu.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_cpu.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_membuf.c.o -MF subprojects/miniasync/libcores.a.p/src_core_membuf.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_membuf.c.o -c ../subprojects/miniasync/src/core/membuf.c",
+    "file": "../subprojects/miniasync/src/core/membuf.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_membuf.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_out.c.o -MF subprojects/miniasync/libcores.a.p/src_core_out.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_out.c.o -c ../subprojects/miniasync/src/core/out.c",
+    "file": "../subprojects/miniasync/src/core/out.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_out.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_util.c.o -MF subprojects/miniasync/libcores.a.p/src_core_util.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_util.c.o -c ../subprojects/miniasync/src/core/util.c",
+    "file": "../subprojects/miniasync/src/core/util.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_util.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libcores.a.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/libcores.a.p/src_core_ringbuf.c.o -MF subprojects/miniasync/libcores.a.p/src_core_ringbuf.c.o.d -o subprojects/miniasync/libcores.a.p/src_core_ringbuf.c.o -c ../subprojects/miniasync/src/core/ringbuf.c",
+    "file": "../subprojects/miniasync/src/core/ringbuf.c",
+    "output": "subprojects/miniasync/libcores.a.p/src_core_ringbuf.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libminiasync.so.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -Dminiasync_EXPORTS -MD -MQ subprojects/miniasync/libminiasync.so.p/src_runtime.c.o -MF subprojects/miniasync/libminiasync.so.p/src_runtime.c.o.d -o subprojects/miniasync/libminiasync.so.p/src_runtime.c.o -c ../subprojects/miniasync/src/runtime.c",
+    "file": "../subprojects/miniasync/src/runtime.c",
+    "output": "subprojects/miniasync/libminiasync.so.p/src_runtime.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libminiasync.so.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -Dminiasync_EXPORTS -MD -MQ subprojects/miniasync/libminiasync.so.p/src_data_mover_threads.c.o -MF subprojects/miniasync/libminiasync.so.p/src_data_mover_threads.c.o.d -o subprojects/miniasync/libminiasync.so.p/src_data_mover_threads.c.o -c ../subprojects/miniasync/src/data_mover_threads.c",
+    "file": "../subprojects/miniasync/src/data_mover_threads.c",
+    "output": "subprojects/miniasync/libminiasync.so.p/src_data_mover_threads.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/libminiasync.so.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -fPIC -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -Dminiasync_EXPORTS -MD -MQ subprojects/miniasync/libminiasync.so.p/src_data_mover_sync.c.o -MF subprojects/miniasync/libminiasync.so.p/src_data_mover_sync.c.o.d -o subprojects/miniasync/libminiasync.so.p/src_data_mover_sync.c.o -c ../subprojects/miniasync/src/data_mover_sync.c",
+    "file": "../subprojects/miniasync/src/data_mover_sync.c",
+    "output": "subprojects/miniasync/libminiasync.so.p/src_data_mover_sync.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/example_basic.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -Wpointer-arith -Wsign-compare -fno-common -Wunused-macros -Wsign-conversion -g -ggdb -ggdb -DDEBUG -MD -MQ subprojects/miniasync/example_basic.p/examples_basic_basic.c.o -MF subprojects/miniasync/example_basic.p/examples_basic_basic.c.o.d -o subprojects/miniasync/example_basic.p/examples_basic_basic.c.o -c ../subprojects/miniasync/examples/basic/basic.c",
+    "file": "../subprojects/miniasync/examples/basic/basic.c",
+    "output": "subprojects/miniasync/example_basic.p/examples_basic_basic.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/example_basic_async.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -Wpointer-arith -Wsign-compare -fno-common -Wunused-macros -Wsign-conversion -g -ggdb -ggdb -DDEBUG -MD -MQ subprojects/miniasync/example_basic_async.p/examples_basic-async_basic-async.c.o -MF subprojects/miniasync/example_basic_async.p/examples_basic-async_basic-async.c.o.d -o subprojects/miniasync/example_basic_async.p/examples_basic-async_basic-async.c.o -c ../subprojects/miniasync/examples/basic-async/basic-async.c",
+    "file": "../subprojects/miniasync/examples/basic-async/basic-async.c",
+    "output": "subprojects/miniasync/example_basic_async.p/examples_basic-async_basic-async.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/example_hashmap.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -Wpointer-arith -Wsign-compare -fno-common -Wunused-macros -Wsign-conversion -g -ggdb -ggdb -DDEBUG -MD -MQ subprojects/miniasync/example_hashmap.p/examples_hashmap_hashmap.c.o -MF subprojects/miniasync/example_hashmap.p/examples_hashmap_hashmap.c.o.d -o subprojects/miniasync/example_hashmap.p/examples_hashmap_hashmap.c.o -c ../subprojects/miniasync/examples/hashmap/hashmap.c",
+    "file": "../subprojects/miniasync/examples/hashmap/hashmap.c",
+    "output": "subprojects/miniasync/example_hashmap.p/examples_hashmap_hashmap.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/dummy.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/dummy.p/tests_dummy_dummy.c.o -MF subprojects/miniasync/dummy.p/tests_dummy_dummy.c.o.d -o subprojects/miniasync/dummy.p/tests_dummy_dummy.c.o -c ../subprojects/miniasync/tests/dummy/dummy.c",
+    "file": "../subprojects/miniasync/tests/dummy/dummy.c",
+    "output": "subprojects/miniasync/dummy.p/tests_dummy_dummy.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/dummy_negative.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/dummy_negative.p/tests_dummy_negative_dummy_negative.c.o -MF subprojects/miniasync/dummy_negative.p/tests_dummy_negative_dummy_negative.c.o.d -o subprojects/miniasync/dummy_negative.p/tests_dummy_negative_dummy_negative.c.o -c ../subprojects/miniasync/tests/dummy_negative/dummy_negative.c",
+    "file": "../subprojects/miniasync/tests/dummy_negative/dummy_negative.c",
+    "output": "subprojects/miniasync/dummy_negative.p/tests_dummy_negative_dummy_negative.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/future.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/future.p/tests_future_test_future.c.o -MF subprojects/miniasync/future.p/tests_future_test_future.c.o.d -o subprojects/miniasync/future.p/tests_future_test_future.c.o -c ../subprojects/miniasync/tests/future/test_future.c",
+    "file": "../subprojects/miniasync/tests/future/test_future.c",
+    "output": "subprojects/miniasync/future.p/tests_future_test_future.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/membuf.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/membuf.p/tests_membuf_membuf_simple.c.o -MF subprojects/miniasync/membuf.p/tests_membuf_membuf_simple.c.o.d -o subprojects/miniasync/membuf.p/tests_membuf_membuf_simple.c.o -c ../subprojects/miniasync/tests/membuf/membuf_simple.c",
+    "file": "../subprojects/miniasync/tests/membuf/membuf_simple.c",
+    "output": "subprojects/miniasync/membuf.p/tests_membuf_membuf_simple.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/memcpy_threads.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/memcpy_threads.p/tests_memcpy_threads_memcpy_threads.c.o -MF subprojects/miniasync/memcpy_threads.p/tests_memcpy_threads_memcpy_threads.c.o.d -o subprojects/miniasync/memcpy_threads.p/tests_memcpy_threads_memcpy_threads.c.o -c ../subprojects/miniasync/tests/memcpy_threads/memcpy_threads.c",
+    "file": "../subprojects/miniasync/tests/memcpy_threads/memcpy_threads.c",
+    "output": "subprojects/miniasync/memcpy_threads.p/tests_memcpy_threads_memcpy_threads.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/memmove_sync.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/memmove_sync.p/tests_memmove_sync_memmove_sync.c.o -MF subprojects/miniasync/memmove_sync.p/tests_memmove_sync_memmove_sync.c.o.d -o subprojects/miniasync/memmove_sync.p/tests_memmove_sync_memmove_sync.c.o -c ../subprojects/miniasync/tests/memmove_sync/memmove_sync.c",
+    "file": "../subprojects/miniasync/tests/memmove_sync/memmove_sync.c",
+    "output": "subprojects/miniasync/memmove_sync.p/tests_memmove_sync_memmove_sync.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/memmove_threads.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/memmove_threads.p/tests_memmove_threads_memmove_threads.c.o -MF subprojects/miniasync/memmove_threads.p/tests_memmove_threads_memmove_threads.c.o.d -o subprojects/miniasync/memmove_threads.p/tests_memmove_threads_memmove_threads.c.o -c ../subprojects/miniasync/tests/memmove_threads/memmove_threads.c",
+    "file": "../subprojects/miniasync/tests/memmove_threads/memmove_threads.c",
+    "output": "subprojects/miniasync/memmove_threads.p/tests_memmove_threads_memmove_threads.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/memset_sync.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/memset_sync.p/tests_memset_sync_memset_sync.c.o -MF subprojects/miniasync/memset_sync.p/tests_memset_sync_memset_sync.c.o.d -o subprojects/miniasync/memset_sync.p/tests_memset_sync_memset_sync.c.o -c ../subprojects/miniasync/tests/memset_sync/memset_sync.c",
+    "file": "../subprojects/miniasync/tests/memset_sync/memset_sync.c",
+    "output": "subprojects/miniasync/memset_sync.p/tests_memset_sync_memset_sync.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/memset_threads.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/memset_threads.p/tests_memset_threads_memset_threads.c.o -MF subprojects/miniasync/memset_threads.p/tests_memset_threads_memset_threads.c.o.d -o subprojects/miniasync/memset_threads.p/tests_memset_threads_memset_threads.c.o -c ../subprojects/miniasync/tests/memset_threads/memset_threads.c",
+    "file": "../subprojects/miniasync/tests/memset_threads/memset_threads.c",
+    "output": "subprojects/miniasync/memset_threads.p/tests_memset_threads_memset_threads.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Isubprojects/miniasync/vdm.p -Isubprojects/miniasync -I../subprojects/miniasync -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -I../subprojects/miniasync/tests -I../subprojects/miniasync/extras/dml -I../subprojects/miniasync/extras/dml/include -I../subprojects/miniasync/extras/dml/utils -I../subprojects/miniasync/src/core -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu99 -O0 -g -Wpointer-arith -Wunused-macros -Wsign-conversion -Wsign-compare -fno-common -DVG_MEMCHECK_ENABLED=1 -DVG_DRD_ENABLED=1 -DVG_HELGRIND_ENABLED=1 -g -ggdb -DDEBUG -MD -MQ subprojects/miniasync/vdm.p/tests_vdm_test_vdm.c.o -MF subprojects/miniasync/vdm.p/tests_vdm_test_vdm.c.o.d -o subprojects/miniasync/vdm.p/tests_vdm_test_vdm.c.o -c ../subprojects/miniasync/tests/vdm/test_vdm.c",
+    "file": "../subprojects/miniasync/tests/vdm/test_vdm.c",
+    "output": "subprojects/miniasync/vdm.p/tests_vdm_test_vdm.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Iideas/utils/libutils.so.p -Iideas/utils -I../ideas/utils -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -MD -MQ ideas/utils/libutils.so.p/timer.c.o -MF ideas/utils/libutils.so.p/timer.c.o.d -o ideas/utils/libutils.so.p/timer.c.o -c ../ideas/utils/timer.c",
+    "file": "../ideas/utils/timer.c",
+    "output": "ideas/utils/libutils.so.p/timer.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Iideas/future-in-future/future-in-future.p -Iideas/future-in-future -I../ideas/future-in-future -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -Isubprojects/miniasync -I../subprojects/miniasync -Iideas/utils -I../ideas/utils -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -MD -MQ ideas/future-in-future/future-in-future.p/future-in-future.c.o -MF ideas/future-in-future/future-in-future.p/future-in-future.c.o.d -o ideas/future-in-future/future-in-future.p/future-in-future.c.o -c ../ideas/future-in-future/future-in-future.c",
+    "file": "../ideas/future-in-future/future-in-future.c",
+    "output": "ideas/future-in-future/future-in-future.p/future-in-future.c.o"
+  }
+]
