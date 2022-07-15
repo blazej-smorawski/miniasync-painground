@@ -8,20 +8,22 @@
  * Macros:
  */
 
-enum { COUNTER_BASE = __COUNTER__ };
+enum {
+    COUNTER_BASE = __COUNTER__
+};
 
 #define LOCAL_COUNTER (__COUNTER__ - COUNTER_BASE)
 
 
 #define SUBROUTINES(sub) int stage;\
-		union {\
-		struct sub ## _future sub;\
-		}exclusive_subroutines;\
+union {\
+struct sub ## _future sub;\
+}exclusive_subroutines;\
 
 #define COROUTINE switch (data->stage){ \
 case 0:\
 
-#define SUBROUTINE(num,sub) data->exclusive_subroutines.sub = sub();\
+#define SUBROUTINE(sub) data->exclusive_subroutines.sub = sub();\
 if (future_poll(&data->exclusive_subroutines.sub,\
 NULL) == FUTURE_STATE_COMPLETE) {\
 data->stage++;}\
@@ -44,10 +46,12 @@ struct subroutine_future_data {
 struct subroutine_future_output {
 };
 
-FUTURE(subroutine_future, struct subroutine_future_data, struct subroutine_future_output);
+FUTURE(subroutine_future,
+struct subroutine_future_data, struct subroutine_future_output);
 
 static enum future_state
-subroutine_future_implementation(struct future_context *ctx, struct future_notifier *notifier)
+subroutine_future_implementation(struct future_context *ctx,
+	struct future_notifier *notifier)
 {
 	struct subroutine_future_data *data = future_context_get_data(ctx);
 
@@ -81,18 +85,20 @@ struct task_future_data {
 struct task_future_output {
 };
 
-FUTURE(task_future, struct task_future_data, struct task_future_output);
+FUTURE(task_future,
+struct task_future_data, struct task_future_output);
 
 static enum future_state
-caller_future_implementation(struct future_context *ctx, struct future_notifier *notifier)
+caller_future_implementation(struct future_context *ctx,
+	struct future_notifier *notifier)
 {
 	struct task_future_data *data = future_context_get_data(ctx);
 
 	COROUTINE
 			printf("Stage 0\n");
-			SUBROUTINE(1,subroutine)
+			SUBROUTINE(subroutine)
 			printf("Stage 1\n");
-			SUBROUTINE(1,subroutine)
+			SUBROUTINE(subroutine)
 	END_COROUTINE
 }
 
@@ -108,15 +114,17 @@ task()
 
 	return future;
 }
+
 /*
  * ----==================----
  */
 
-int main(void){
+int main(void)
+{
 	struct task_future new_task = task();
 	do {
 		printf("Polling...");
-	}while(future_poll(&new_task, NULL) != FUTURE_STATE_COMPLETE);
+	} while (future_poll(&new_task, NULL) != FUTURE_STATE_COMPLETE);
 	return 0;
 }
 
