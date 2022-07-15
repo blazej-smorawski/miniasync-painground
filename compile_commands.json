@@ -151,6 +151,12 @@
   },
   {
     "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
+    "command": "cc -Iideas/coroutine/coroutine.p -Iideas/coroutine -I../ideas/coroutine -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -Isubprojects/miniasync -I../subprojects/miniasync -Iideas/utils -I../ideas/utils -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -MD -MQ ideas/coroutine/coroutine.p/coroutine.c.o -MF ideas/coroutine/coroutine.p/coroutine.c.o.d -o ideas/coroutine/coroutine.p/coroutine.c.o -c ../ideas/coroutine/coroutine.c",
+    "file": "../ideas/coroutine/coroutine.c",
+    "output": "ideas/coroutine/coroutine.p/coroutine.c.o"
+  },
+  {
+    "directory": "/home/blazej-smorawski/git/miniasync-painground/build",
     "command": "cc -Iideas/future-in-future/future-in-future.p -Iideas/future-in-future -I../ideas/future-in-future -I/usr/include/valgrind -I../subprojects/miniasync/src -I../subprojects/miniasync/src/include -Isubprojects/miniasync/__CMake_build -I../subprojects/miniasync/__CMake_build -Isubprojects/miniasync -I../subprojects/miniasync -Iideas/utils -I../ideas/utils -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -MD -MQ ideas/future-in-future/future-in-future.p/future-in-future.c.o -MF ideas/future-in-future/future-in-future.p/future-in-future.c.o.d -o ideas/future-in-future/future-in-future.p/future-in-future.c.o -c ../ideas/future-in-future/future-in-future.c",
     "file": "../ideas/future-in-future/future-in-future.c",
     "output": "ideas/future-in-future/future-in-future.p/future-in-future.c.o"
