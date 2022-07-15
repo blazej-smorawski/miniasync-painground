@@ -5,7 +5,38 @@
 
 /*
  * ----==================----
- * Here's definition of timer_future
+ * Macros:
+ */
+
+enum { COUNTER_BASE = __COUNTER__ };
+
+#define LOCAL_COUNTER (__COUNTER__ - COUNTER_BASE)
+
+
+#define SUBROUTINES(sub) int stage;\
+		union {\
+		struct sub ## _future sub;\
+		}exclusive_subroutines;\
+
+#define COROUTINE switch (data->stage){ \
+case 0:\
+
+#define SUBROUTINE(num,sub) data->exclusive_subroutines.sub = sub();\
+if (future_poll(&data->exclusive_subroutines.sub,\
+NULL) == FUTURE_STATE_COMPLETE) {\
+data->stage++;}\
+return FUTURE_STATE_RUNNING;\
+case LOCAL_COUNTER:\
+
+#define END_COROUTINE } \
+return FUTURE_STATE_COMPLETE;\
+/*
+ * ----==================----
+ */
+
+/*
+ * ----==================----
+ * Here's definition of subroutine_future
  */
 struct subroutine_future_data {
 };
@@ -44,10 +75,7 @@ subroutine(void)
  * Here's definition of caller_future
  */
 struct task_future_data {
-    int stage;
-    union {
-	struct subroutine_future subroutine;
-    }exclusive_subroutines;
+    SUBROUTINES(subroutine)
 };
 
 struct task_future_output {
@@ -60,31 +88,12 @@ caller_future_implementation(struct future_context *ctx, struct future_notifier 
 {
 	struct task_future_data *data = future_context_get_data(ctx);
 
-	switch (data->stage) {
-		case 0:
+	COROUTINE
 			printf("Stage 0\n");
-			data->exclusive_subroutines.subroutine = subroutine();
-			if (future_poll(&data->exclusive_subroutines.subroutine, NULL) == FUTURE_STATE_COMPLETE) {
-				data->stage++;
-				return FUTURE_STATE_RUNNING;
-				// Poll itself?
-			} else {
-				return FUTURE_STATE_RUNNING;
-			}
-		case 1:
+			SUBROUTINE(1,subroutine)
 			printf("Stage 1\n");
-			data->exclusive_subroutines.subroutine = subroutine();
-			if (future_poll(&data->exclusive_subroutines.subroutine, NULL) == FUTURE_STATE_COMPLETE) {
-				data->stage++;
-				return FUTURE_STATE_RUNNING;
-				// Poll itself?
-			} else {
-				return FUTURE_STATE_RUNNING;
-			}
-		case 2:
-			printf("Task finished\n");
-			return FUTURE_STATE_COMPLETE;
-	}
+			SUBROUTINE(1,subroutine)
+	END_COROUTINE
 }
 
 /* Get caller_future */
