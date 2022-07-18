@@ -16,39 +16,39 @@ enum {
 
 
 #define SUBROUTINES(sub) \
-	int stage; \
-	char code_done;\
-	union {\
-		struct sub ## _future sub;\
-	}exclusive_subroutines;\
+        int stage; \
+        char code_done;\
+        union {\
+                struct sub ## _future sub;\
+        }exclusive_subroutines;\
 
 #define COROUTINE \
-	switch (data->stage){ \
-		case 0:\
-		if(!data->code_done) \
-		{               \
-			do\
+        switch (data->stage){ \
+                case 0:\
+                if(!data->code_done) \
+                {               \
+                        do\
 
 #define SUBROUTINE(sub, call) \
-			while(0);\
-			data->exclusive_subroutines.sub = call;\
-			data->code_done=1;   \
-		}\
-		if (future_poll(&data->exclusive_subroutines.sub,\
-			NULL) == FUTURE_STATE_COMPLETE) {\
-			data->stage++;\
-			data->code_done=0;\
-		}\
-		return FUTURE_STATE_RUNNING;\
-		case LOCAL_COUNTER:\
-		if(!data->code_done)\
-		{\
-			do\
+                        while(0);\
+                        data->exclusive_subroutines.sub = call;\
+                        data->code_done=1;   \
+                }\
+                if (future_poll(&data->exclusive_subroutines.sub,\
+                        NULL) == FUTURE_STATE_COMPLETE) {\
+                        data->stage++;\
+                        data->code_done=0;\
+                }\
+                return FUTURE_STATE_RUNNING;\
+                case LOCAL_COUNTER:\
+                if(!data->code_done)\
+                {\
+                        do\
 
 #define END_COROUTINE \
-			{}while(0);\
-		} \
-	}\
+                        {}while(0);\
+                } \
+        }\
 return FUTURE_STATE_COMPLETE; \
 
 /*
@@ -67,7 +67,7 @@ struct subroutine_future_output {
 };
 
 FUTURE(subroutine_future,
-struct subroutine_future_data, struct subroutine_future_output);
+	struct subroutine_future_data, struct subroutine_future_output);
 
 static enum future_state
 subroutine_future_implementation(struct future_context *ctx,
@@ -75,7 +75,7 @@ subroutine_future_implementation(struct future_context *ctx,
 {
 	struct subroutine_future_data *data = future_context_get_data(ctx);
 
-	while(data->counter!=0) {
+	while (data->counter != 0) {
 		printf("Subroutine counter: %d\n", data->counter--);
 		return FUTURE_STATE_RUNNING;
 	}
@@ -109,7 +109,7 @@ struct task_future_output {
 };
 
 FUTURE(task_future,
-struct task_future_data, struct task_future_output);
+	struct task_future_data, struct task_future_output);
 
 static enum future_state
 caller_future_implementation(struct future_context *ctx,
@@ -120,9 +120,11 @@ caller_future_implementation(struct future_context *ctx,
 	COROUTINE {
 		printf("Stage 0\n");
 		int x = 5;
-	}SUBROUTINE(subroutine,subroutine(3)) {
+	} SUBROUTINE(subroutine, subroutine(3)) {
 		printf("Stage 1\n");
-	}SUBROUTINE(subroutine,subroutine(5))
+	} SUBROUTINE(subroutine, subroutine(1)) {
+		printf("Stage 2\n");
+	} SUBROUTINE(subroutine, subroutine(5))
 	END_COROUTINE
 }
 
