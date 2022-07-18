@@ -117,14 +117,20 @@ caller_future_implementation(struct future_context *ctx,
 {
 	struct task_future_data *data = future_context_get_data(ctx);
 
-	COROUTINE {
+	COROUTINE
+	{
 		printf("Stage 0\n");
 		int x = 5;
-	} SUBROUTINE(subroutine, subroutine(3)) {
+	}
+	SUBROUTINE(subroutine, subroutine(3))
+	{
 		printf("Stage 1\n");
-	} SUBROUTINE(subroutine, subroutine(1)) {
+	}
+	SUBROUTINE(subroutine, subroutine(1))
+	{
 		printf("Stage 2\n");
-	} SUBROUTINE(subroutine, subroutine(5))
+	}
+	SUBROUTINE(subroutine, subroutine(5))
 	END_COROUTINE
 }
 
