@@ -8,6 +8,10 @@
  * Macros:
  */
 
+#define TOKENPASTE(x, y) x ## y
+#define TOKENPASTE2(x, y) TOKENPASTE(x, y)
+#define UNIQUE(Unique_, __LINE__) TOKENPASTE2(Unique_, __LINE__)
+
 enum {
     COUNTER_BASE = __COUNTER__
 };
@@ -28,8 +32,8 @@ enum {
 #define await(sub, call) \
                 do{\
                     data->exclusive_subroutines.sub = call;\
-                    await ## __LINE__: if (future_poll(&data->exclusive_subroutines.sub, NULL) != FUTURE_STATE_COMPLETE) { data->stage = &&await ## __LINE__; return FUTURE_STATE_RUNNING;\
-                }while(0)\
+                    UNIQUE(await,__LINE__): if (future_poll(&data->exclusive_subroutines.sub, NULL) != FUTURE_STATE_COMPLETE) { data->stage = && UNIQUE(await,__LINE__); return FUTURE_STATE_RUNNING;} \
+                    }while(0)\
 
 /*
  * ----==================----
