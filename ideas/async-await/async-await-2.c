@@ -102,12 +102,18 @@ caller_future_implementation(struct future_context *ctx,
 {
 	struct task_future_data *data = future_context_get_data(ctx);
 
-	async
+	//goto entry_points;
+#define entry if(stage==0) goto start;
+start:
 	printf("Heleloe! 5 btw....");
 	await(subroutine, subroutine(5));
 	if (1 == 5) {
 		printf("heh...");
-		await(subroutine, subroutine(1));
+#define temp entry
+	temp
+#define new_entry if(stage==__COUNTER__) goto await-__COUNTER__;
+#define entry TOKENPASTE2(temp, new_entry)
+	entry
 	} else {
 		printf("nah...");
 		await(subroutine, subroutine(3));
@@ -115,6 +121,9 @@ caller_future_implementation(struct future_context *ctx,
 			await(subroutine, subroutine(2));
 		}
 	}
+
+entry_points:
+
 	return FUTURE_STATE_COMPLETE;
 }
 
