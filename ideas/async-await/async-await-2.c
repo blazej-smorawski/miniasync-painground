@@ -109,11 +109,6 @@ start:
 	await(subroutine, subroutine(5));
 	if (1 == 5) {
 		printf("heh...");
-#define temp entry
-	temp
-#define new_entry if(stage==__COUNTER__) goto await-__COUNTER__;
-#define entry TOKENPASTE2(temp, new_entry)
-	entry
 	} else {
 		printf("nah...");
 		await(subroutine, subroutine(3));
