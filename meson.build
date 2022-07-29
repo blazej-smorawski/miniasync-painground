@@ -1,4 +1,4 @@
-project('miniasync-painground', 'c')
+project('miniasync-painground', 'c',default_options:['warning_level=0'])
 
 cmake = import('cmake')
 sub_proj = cmake.subproject('miniasync')

@@ -97,7 +97,7 @@ FUTURE(task_future,
 	struct task_future_data, struct task_future_output);
 
 static enum future_state
-caller_future_implementation(struct future_context *ctx,
+task_future_implementation(struct future_context *ctx,
 	struct future_notifier *notifier)
 {
 	struct task_future_data *data = future_context_get_data(ctx);
@@ -126,7 +126,7 @@ task()
 		.data.stage = NULL,
 	};
 
-	FUTURE_INIT(&future, caller_future_implementation);
+	FUTURE_INIT(&future, task_future_implementation);
 
 	return future;
 }
