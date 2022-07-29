@@ -19,7 +19,7 @@ enum {
 #define LOCAL_COUNTER (__COUNTER__ - COUNTER_BASE)
 
 
-#define SUBROUTINES(sub) \
+#define AWAIT_CALLS(sub) \
         void *stage; \
         union {\
                 struct sub ## _future sub;\
@@ -87,7 +87,7 @@ subroutine(int counter)
  */
 struct task_future_data {
 	int counter;
-	SUBROUTINES(subroutine);
+	AWAIT_CALLS(subroutine);
 };
 
 struct task_future_output {

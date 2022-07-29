@@ -8,14 +8,8 @@
  * Macros:
  */
 
-#define get_rsp(p) \
-  asm volatile("movq %%rsp, %0" : "=r"(p))
 #define get_rbp(p) \
   asm volatile("movq %%rbp, %0" : "=r"(p))
-#define get_rip(p) \
-  asm volatile("movq %%rip, %0" : "=r"(p))
-#define set_rsp(p) \
-  asm volatile("movq %0, %%rsp" : : "r"(p))
 #define set_rbp(p) \
   asm volatile("movq %0, %%rbp" : : "r"(p))
 
@@ -25,7 +19,7 @@
 
 #define STACK_SIZE 64
 
-#define SUBROUTINES(sub) \
+#define AWAIT_CALLS(sub) \
         void *stage; \
         union {\
                 struct sub ## _future sub;\
@@ -108,7 +102,7 @@ subroutine(int counter)
  */
 struct task_future_data {
 	int counter;
-	SUBROUTINES(subroutine);
+	AWAIT_CALLS(subroutine);
 };
 
 struct task_future_output {
