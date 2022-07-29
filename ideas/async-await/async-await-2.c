@@ -2,46 +2,60 @@
 // Created by blazej-smorawski on 26.07.2022.
 //
 #include <libminiasync.h>
-#include <stdlib.h>
-#include <string.h>
 
 /*
  * ----==================----
  * Macros:
  */
 
+#define get_rsp(p) \
+  asm volatile("movq %%rsp, %0" : "=r"(p))
+#define get_rbp(p) \
+  asm volatile("movq %%rbp, %0" : "=r"(p))
+#define get_rip(p) \
+  asm volatile("movq %%rip, %0" : "=r"(p))
+#define set_rsp(p) \
+  asm volatile("movq %0, %%rsp" : : "r"(p))
+#define set_rbp(p) \
+  asm volatile("movq %0, %%rbp" : : "r"(p))
+
 #define TOKENPASTE(x, y) x ## y
 #define TOKENPASTE2(x, y) TOKENPASTE(x, y)
 #define UNIQUE(Unique_, __LINE__) TOKENPASTE2(Unique_, __LINE__)
 
-enum {
-	COUNTER_BASE = __COUNTER__
-};
-
-#define LOCAL_COUNTER (__COUNTER__ - COUNTER_BASE)
-
+#define STACK_SIZE 64
 
 #define SUBROUTINES(sub) \
-        void *stage;     \
-	void *stack_copy;\
+        void *stage; \
         union {\
                 struct sub ## _future sub;\
-        }exclusive_subroutines\
+        }exclusive_subroutines;           \
+	\
+	void *stack[STACK_SIZE];        \
+	void *rbp;              \
+	void *rip;               \
+	void *shadow_space[4];  \
 
-#define async \
-	int stack_size = 0;\
-	void *stack_start = 0;\
-        if(data->stage)\
+#define async_begin \
+        void **stack_base_ptr;\
+	get_rbp(stack_base_ptr);\
+	struct task_future_data *data = future_context_get_data(ctx);\
+	move(ctx);\
+	move(notifier);\
+	move(data);\
+	move(stack_base_ptr);\
+	set_rbp(&(((struct task_future_data*)future_context_get_data(ctx))->stack[STACK_SIZE])); \
+	if(data->stage)\
             goto *data->stage;\
-
-#define STACK_SIZE &stack_start - UNIQUE(&stack_end,__LINE__)
 
 #define await(sub, call) \
                 do{\
                     data->exclusive_subroutines.sub = call;\
-		    UNIQUE(void *stack_end,__LINE__) = 0; data->stack_copy = malloc(STACK_SIZE); memcpy(data->stack_copy, &UNIQUE(stack_end,__LINE__), STACK_SIZE); UNIQUE(await,__LINE__): if (future_poll(FUTURE_AS_RUNNABLE(&data->exclusive_subroutines.sub), NULL) != FUTURE_STATE_COMPLETE) { data->stage = && UNIQUE(await,__LINE__); return FUTURE_STATE_RUNNING;} memcpy(&UNIQUE(stack_end,__LINE__), data->stack_copy, STACK_SIZE);\
-                    }while(0)\
+                    UNIQUE(await,__LINE__): if (future_poll(FUTURE_AS_RUNNABLE(&data->exclusive_subroutines.sub), NULL) != FUTURE_STATE_COMPLETE) { data->stage = && UNIQUE(await,__LINE__); set_rbp(stack_base_ptr); return FUTURE_STATE_RUNNING;} \
+                    }while(0)                              \
 
+#define async_end \
+        set_rbp(stack_base_ptr);
 /*
  * ----==================----
  */
@@ -74,6 +88,7 @@ subroutine_future_implementation(struct future_context *ctx,
 	return FUTURE_STATE_COMPLETE;
 }
 
+/* Get timer_future */
 static struct subroutine_future
 subroutine(int counter)
 {
@@ -89,7 +104,7 @@ subroutine(int counter)
 
 /*
  * ----==================----
- * Here's definition of task_future
+ * Here's definition of caller_future
  */
 struct task_future_data {
 	int counter;
@@ -102,25 +117,16 @@ struct task_future_output {
 FUTURE(task_future,
 	struct task_future_data, struct task_future_output);
 
+#define move(var) data->stack[STACK_SIZE - (stack_base_ptr - (void**)&var)] = var
+
 static enum future_state
 task_future_implementation(struct future_context *ctx,
 	struct future_notifier *notifier)
 {
-	struct task_future_data *data = future_context_get_data(ctx);
-
-	async
-	printf("Heleloe! 5 btw....");
-	int int_o_stack1 = 72;
-	int int_o_stack2 = 73;
-	int int_o_stack3 = 74;
-	UNIQUE(void *stack_end,1) = 0;
-	#define STACK_SIZE &stack_start - UNIQUE(&stack_end,1)
-	data->stack_copy = malloc(STACK_SIZE);
-	int n = STACK_SIZE;
-	memcpy(data->stack_copy, &UNIQUE(stack_end,1), STACK_SIZE);
-	memcpy(&UNIQUE(stack_end,1), data->stack_copy, STACK_SIZE);\
+	async_begin
+	printf("Halo! 5 btw....");
+	int int_o_stack = 71;
 	await(subroutine, subroutine(5));
-	int int_o_stack = 72;
 	if (1 == 5) {
 		printf("heh...");
 		await(subroutine, subroutine(1));
@@ -128,18 +134,21 @@ task_future_implementation(struct future_context *ctx,
 		printf("nah...");
 		await(subroutine, subroutine(3));
 		for (data->counter = 0; data->counter < 3; data->counter++) {
-			printf("int_o_stack = %d...", int_o_stack);
+			printf("int_o_stack=%d...",int_o_stack);
 			await(subroutine, subroutine(2));
 		}
 	}
+	async_end
 	return FUTURE_STATE_COMPLETE;
 }
 
+/* Get caller_future */
 static struct task_future
 task()
 {
 	struct task_future future = {
 		.data.stage = NULL,
+		.data.stack = {0xDE,0xAD,0xBE,0xEF},
 	};
 
 	FUTURE_INIT(&future, task_future_implementation);
@@ -151,9 +160,8 @@ task()
  * ----==================----
  */
 
-void rip_stack(void) {
-	char ded[128] = {"DED"};
-	ded[1] = 'D';
+void rip_stack() {
+	char rip[128];
 }
 
 int main(void)
