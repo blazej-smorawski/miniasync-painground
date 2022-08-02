@@ -127,7 +127,7 @@ task_future_implementation(struct future_context *ctx,
 	} else {
 		printf("nah...");
 		await(subroutine, subroutine(3));
-		for (data->counter = 0; data->counter < 3; data->counter++) {
+		for (int i = 0; i < 3; i++) {
 			printf("int_o_stack=%d...",int_o_stack);
 			await(subroutine, subroutine(2));
 		}
